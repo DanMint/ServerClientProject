@@ -1,0 +1,3 @@
+/home/daniel/Desktop/NetworksProject/SecureCommunicationProject/Clinet/build/CMakeFiles/my_program.dir
+/home/daniel/Desktop/NetworksProject/SecureCommunicationProject/Clinet/build/CMakeFiles/edit_cache.dir
+/home/daniel/Desktop/NetworksProject/SecureCommunicationProject/Clinet/build/CMakeFiles/rebuild_cache.dir
