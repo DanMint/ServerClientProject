@@ -26,20 +26,7 @@ Server::Server(const int serverPort, const int protocolType) {
 }
 
 void Server::start() {
-    listen(serverSocket, 5);
-
-    while(true) {
-        sockaddr_in clientAddr;
-        socklen_t addrLen = sizeof(clientAddr);
-        // accept client connection
-        int clientSocket = accept(serverSocket, (struct sockaddr*)&clientAddr, &addrLen);
-        // Test::testClientSocket(clientSocket);
-
-        char clientIP[INET_ADDRSTRLEN];
-        inet_ntop(AF_INET, &(clientAddr.sin_addr), clientIP, INET_ADDRSTRLEN);
-
-        std::cout << "Client from " << clientIP << " on port " << clientSocket << std::endl;
-    }
+   
 }
 
 
