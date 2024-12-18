@@ -1,0 +1,1 @@
+g++ testMessage.cpp ../src/utils/message.cpp -I../include/utils -lgtest -lpthread -o messageTest

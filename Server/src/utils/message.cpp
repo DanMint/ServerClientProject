@@ -1,11 +1,13 @@
 #include "../../include/utils/message.h"
 #include <iostream>
 #include <variant>
+#include <string>
 
 
-Message::Message(const int type, const int length) {
+Message::Message(const int type, const int length, const std::string id) {
     this->type = type;
     this->length = length;
+    this->id = id;
 
     if (type == CHAR_ARR)
         message = new char[length];

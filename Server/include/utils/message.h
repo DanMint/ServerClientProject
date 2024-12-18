@@ -2,6 +2,7 @@
 #define MESSAGE_H
 
 #include <variant>
+#include <string>
 
 enum MessageType {
     CHAR_ARR = 0,
@@ -21,15 +22,17 @@ enum MessageType {
  * 
  * @param type : Integer which is mapped to a type through enum
  * @param length : Length of message to be sent
+ * @param id : Each client with have a unique ID. This is used to understand who sent the message
  * @param message : The message that is being sent
  * 
  * @function MessageCharArray(const int length) : Defulat constructor to get the length and initialize message array
- * @function void addMessage(const char *message) : Gets the message that is being sent and copies it to the structs message
+ * @function void addMessage(******) : Gets the message that is being sent and copies it to the structs message
  * 
  */
 struct Message {
     int type;
     int length;
+    std::string id;
 
     using messageType = std::variant<char*, int*, double*>;
 
@@ -44,7 +47,7 @@ struct Message {
      * 
      * @return Nothing
      */
-    Message(const int type, const int length);
+    Message(const int type, const int length, const std::string id);
 
     /** 
      * @function addCharArrMessage
