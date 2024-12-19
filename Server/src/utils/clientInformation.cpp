@@ -2,10 +2,25 @@
 
 #include <iostream>
 
+ClientInformation::ClientInformation() {
+    this->clientSocket = -1;
+    this->ipAddress = "NULL";
+    this->id = "NULL";
+}
+
 ClientInformation::ClientInformation(const int clientSocket, const std::string &ipAddress, const std::string &id) {
     this->clientSocket = clientSocket;
     this->ipAddress = ipAddress;
     this->id = id;
+}
+
+ClientInformation& ClientInformation::operator=(const ClientInformation& other) {
+    if(this != &other) {
+        this->clientSocket = other.clientSocket;
+        this->ipAddress = other.ipAddress;
+        this->friendList = other.friendList;
+    }
+    return *this;
 }
 
 int ClientInformation::getSocket() const {

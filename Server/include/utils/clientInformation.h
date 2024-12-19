@@ -14,15 +14,17 @@
  * 
  * @private
  * 
- * @param clientSocket : 
- * @param ipAddress : 
- * @param id : 
- * @param Friend: 
- * @param friendList : 
+ * @param clientSocket : server assinged socket for TCP communication
+ * @param ipAddress : clients ip address
+ * @param id : clients unique id
+ * @param Friend: Friend struct
+ * @param friendList : all friends of client
  * 
  * @public
  * 
+ * @function ClientInformation() : default constructor
  * @function ClientInformation(const int serverPort, const int protocolType)
+ * @function ClientInformation& operator= : copy constructor
  * - 
  * @function getSocket : Initializes a new client with socket number, ip address and unique id
  * @function getIpAddress : Gets the socket
@@ -49,7 +51,11 @@ class ClientInformation {
         std::unordered_map<std::string, Friend> friendList;
 
     public:
+        ClientInformation();
+
         ClientInformation(const int clientSocket, const std::string &ipAddress, const std::string &id);
+
+        ClientInformation& operator=(const ClientInformation& other);
 
         int getSocket() const;
 
